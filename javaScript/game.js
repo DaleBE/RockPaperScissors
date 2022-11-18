@@ -22,7 +22,7 @@ const getComputerChoice = () => {
 // function that plays a single round for user and computer. It should take two variables and compare the values to eachother's 
 function playRound(computerChoice, playerChoice) {
 
-   // if values are the same first, then if they are diffrent
+   // check if values are the same first, then if they are diffrent.
 
    if (playerChoice === computerChoice) {
       return 'tie';
@@ -59,7 +59,7 @@ function game() {
    let matchresult;
 
    // cycle through 5 rounds of play and increment results to display after
-   for (let i = 0; i < 5; ++i) {
+   for (let round = 0; round < 5; round++) {
 
       let playerChoice = prompt('Player, choose paper, rock or scissors: ').toLowerCase();
       let computerChoice = getComputerChoice();
@@ -86,4 +86,4 @@ function game() {
    console.log(`Ties: ${ties}`);
 }
 
-game();
+//game();

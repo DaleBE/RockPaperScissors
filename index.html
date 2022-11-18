@@ -5,8 +5,38 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Welcome to Rock, Paper, Scissors!</title>
+   <link rel="stylesheet" href="./css/style.css">
+   <script src="./javaScript/game.js" defer></script>
 </head>
 <body>
-   <script src="./javaScript/game.js"></script>
+   <header class="header">
+      <img class="headIcon" src="./resources/rpsIcon.png" alt="an icon of rock. paper, scissors">
+      <h1>Rock, Paper, Scissors!</h1>
+      <ul>
+         <li>Play Game</li>
+         <li>Restart</li>
+      </ul>
+   </header>
+   <main class="main">
+      <div class="info">
+         <p>Welcome Player to a battle of wits! Can you out-wit the Computer at a classic  game of Rock/Paper/Scisssors ?</p>
+     </div>
+     <div class="cardChoice">
+         <div class="card"></div>
+         <div class="card"></div>
+         <div class="card"></div>
+     </div>
+     <div class="gamePlay">
+         <div class="card"></div>
+         <div class="card"></div>
+     </div>
+     <div class="results">
+         <div class="round"></div>
+         <div class="overall"></div>
+     </div>
+   </main>
+   <footer class="footer">
+      <p>brought to you by Dale Belcham and the Odin Project</p>
+   </footer>
 </body>
 </html>
