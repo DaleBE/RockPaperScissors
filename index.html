@@ -11,28 +11,32 @@
 <body>
    <header class="header">
       <img class="headIcon" src="./resources/rpsIcon.png" alt="an icon of rock. paper, scissors">
-      <h1>Rock, Paper, Scissors!</h1>
-      <ul>
-         <li>Play Game</li>
-         <li>Restart</li>
-      </ul>
+      <h1>Welcome to Rock Paper Scissors!</h1>
+      <button class="startButton" id="startPressed">Start Game</button>
    </header>
    <main class="main">
       <div class="info">
-         <p>Welcome Player to a battle of wits! Can you out-wit the Computer at a classic  game of Rock/Paper/Scisssors ?</p>
+         <p>Welcome Player to a battle of wits! Can you out-wit the Computer at a classic game of Rock/Paper/Scisssors? Press the start button to begin.</p>
      </div>
      <div class="cardChoice">
-         <div class="card"></div>
-         <div class="card"></div>
-         <div class="card"></div>
+         <button class="card one" id="rock"></button>
+         <button class="card two" id="paper"></button>
+         <button class="card three" id="scissors"></button>
      </div>
-     <div class="gamePlay">
-         <div class="card"></div>
-         <div class="card"></div>
-     </div>
+     <!--<div class="gamePlay">
+         <div class="card computer"></div>
+         <div class="card player"></div>
+     </div>-->
      <div class="results">
-         <div class="round"></div>
-         <div class="overall"></div>
+         <div class="round">
+            <p>Player Wins: <span class="playerWin">0</span></p>
+            <p>Computer Wins: <span class="computerWin">0</span></p>
+            <p>Round: <span class="round">1</span></p>
+         </div>
+         <div class="overall">
+            <p>You chose: <span class="playerChoice">Rock</span></p>
+            <p>Computer chose: <span class="computerChoice">Scissors</span></p>
+         </div>
      </div>
    </main>
    <footer class="footer">

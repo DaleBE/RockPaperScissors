@@ -23,8 +23,7 @@ body {
    padding-right: 2rem;
 }
 
-header li {
-   list-style: none;
+header button {
    height: 2rem;
 }
 
@@ -65,7 +64,8 @@ header li {
 
 .results {
    display: flex;
-   justify-content: space-around;
+   justify-content: center;
+   gap: 6rem;
    margin: 1rem 0;
 }
 
@@ -76,23 +76,47 @@ header li {
    gap: 2rem;
 }
 
-.gamePlay {
+/*.gamePlay {
    display: flex;
    justify-content: center;
    margin: 4rem 0;
    gap: 3rem;
-
-}
+}*/
 
 .card {
    border: 2px solid brown;
    background-color: seashell;
    border-radius: 1rem;
    height: 13rem;
-   width: 8rem;
+   width: 9rem;
+}
+
+.one {
+   background-image: url(../resources/rock.png);
+   background-size: 80%;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.two {
+   background-image: url(../resources/paper.png);
+   background-size: 80%;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.three {
+   background-image: url(../resources/scissors.png);
+   background-size: 80%;
+   background-repeat: no-repeat;
+   background-position: center;
 }
 
 .results > * {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
    border: 2px solid black;
    background-color: seashell;
    border-radius: 1rem;
