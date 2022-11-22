@@ -53,54 +53,89 @@ function playRound(computerChoice, playerChoice) {
    let computerWins = 0;
    let playerWins = 0;
    let ties = 0;
+   let rounds = 0;
 
    let choice;
 
+   let roundResult;
    let matchresult;
 
 // function that plays five rounds and declares a winner of the match
 function gameFunction() {
+
+   overallResult.textContent = '';
   
    //let playerChoice = prompt('Player, choose paper, rock or scissors: ').toLowerCase();
    let playerChoice = choice;
    let computerChoice = getComputerChoice();
 
-   console.log(`Player you chose: ${playerChoice}`);
-   console.log(`The computer chose: ${computerChoice}`);
+   playerChose.textContent = playerChoice;
+   computerChose.textContent = computerChoice;
 
-   matchresult = playRound(computerChoice, playerChoice);
+   roundResult = playRound(computerChoice, playerChoice);
 
-   console.log(`The result is: ${matchresult}`);
-
-   if (matchresult === 'computer wins') {
+   if (roundResult === 'computer wins') {
       ++computerWins;
-   } else if (matchresult === 'player wins') {
+   } else if (roundResult === 'player wins') {
       ++playerWins;
-   } else if (matchresult === 'tie') {
+   } else if (roundResult === 'tie') {
       ++ties;
-   }   
+   }; 
    
-   // display match results
-   console.log(`Player Wins: ${playerWins}`);
-   console.log(`Computer Wins: ${computerWins}`);
-   console.log(`Ties: ${ties}`)
+   ++rounds;
+
+    // display match results
+   playerScore.textContent = playerWins;
+   computerScore.textContent = computerWins;
+   roundTies.textContent = ties;
+   roundNum.textContent = rounds;
+
+   if (rounds >= 5) {
+
+      if (computerWins > playerWins) {
+         matchresult = 'You have lost the game, Computer wins the match!';
+      } else if (playerWins > computerWins) {
+         matchresult = 'You are triumphant! Player wins the match.';
+      } else if (playerWins === computerWins) {
+         matchresult = 'Looks like you are both winners!.. Rematch, maybe?';
+      };
+
+      overallResult.textContent = matchresult;
+
+      computerWins = 0;
+      playerWins = 0;
+      ties = 0;
+      rounds = 0;
+
+   };
 }
 
 
    const rockCard = document.querySelector('#rock');
    rockCard.addEventListener('click', () => {choice = rockCard.id});
    rockCard.addEventListener('click', gameFunction);
-   console.log(choice);
 
    const paperCard = document.querySelector('#paper');
    paperCard.addEventListener('click', () => {choice = paperCard.id});
    paperCard.addEventListener('click', gameFunction);
-   console.log(choice);
 
    const scissorsCard = document.querySelector('#scissors');
    scissorsCard.addEventListener('click', () => {choice = scissorsCard.id});
    scissorsCard.addEventListener('click', gameFunction);
-   console.log(choice);
 
-   //const start = document.querySelector('#startPressed');
-   //start.addEventListener('click', gameFunction);
+   const playerScore = document.querySelector('.playerScore');
+
+   const computerScore = document.querySelector('.computerScore');
+
+   const roundNum = document.querySelector('.roundNum');
+
+   const roundTies = document.querySelector('.roundTies');
+
+   const playerChose = document.querySelector('.playerChose');
+
+   const computerChose = document.querySelector('.computerChose');
+
+   const overallResult = document.querySelector('.overallResult');
+   
+
+
